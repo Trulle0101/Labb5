@@ -15,4 +15,10 @@ public class Movie
     {
         return reviewScore;
     }
+
+    public String toFileString()
+    {
+        return title + "" + reviewScore;
+    }
+
 }
