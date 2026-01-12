@@ -11,7 +11,7 @@ public class MovieDatabase
     public List<Movie> searchByTitle(String keyword)
     {
         List<Movie> result = new ArrayList<>();
-        for (Movie movie:movies)
+        for (Movie movie : movies)
         {
             if (movie.getTitle().toLowerCase().contains(keyword.toLowerCase()))
             {
@@ -19,5 +19,23 @@ public class MovieDatabase
             }
         }
         return result;
+    }
+
+    public List<Movie> searchByScore(int minScore)
+    {
+        List<Movie> result = new ArrayList<>();
+        for (Movie movie : movies)
+        {
+            if (movie.getReviewScore() >= minScore)
+            {
+                result.add(movie);
+            }
+        }
+        return result;
+    }
+
+    public List<Movie> getAllMoives()
+    {
+        return movies;
     }
 }
