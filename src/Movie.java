@@ -1,3 +1,5 @@
+package moviedb.model;
+
 public class Movie
 {
     private String title;
