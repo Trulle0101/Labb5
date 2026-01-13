@@ -1,4 +1,4 @@
-package moviedb.model;
+package Movie;
 
 public class Movie
 {
