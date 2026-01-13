@@ -32,4 +32,32 @@ public class ConsoleUI
             }
         }
     }
+
+    private void printMenu()
+    {
+        System.out.println("\n** MOVIE DATABASE **");
+        System.out.println("-------------------");
+        System.out.println("1. Search title");
+        System.out.println("2. Search review score");
+        System.out.println("-------------------");
+        System.out.println("4. Close program");
+    }
+
+    private void searchTitle()
+    {
+        System.out.print("Enter key word: ");
+        String keyword = scanner.nextLine();
+        printMovies(database.searchByScore(score));
+    }
+
+    private void addMovie()
+    {
+        System.out.print("Title: ");
+        String title = scanner.nextLine();
+        System.out.print("Review score (1 – 5): ");
+        int score = scanner.nextInt();
+        scanner.nextLine();
+
+        database.addMovie(new Movie(title, score));
+    }
 }
