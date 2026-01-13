@@ -1,7 +1,13 @@
+package MovieDatabase;
+
+import Movie.Movie;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MovieDatabase
 {
+
+    private List<Movie> movies = new ArrayList<>();
 
     public void addMovie(Movie movie)
     {
