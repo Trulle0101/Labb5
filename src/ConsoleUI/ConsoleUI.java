@@ -1,8 +1,16 @@
+package ConsoleUI;
+import MovieDatabase.MovieDatabase;
+import MovieFileHandler.MovieFileHandler;
+import Movie.Movie;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleUI
 {
+    private MovieDatabase database;
+    private Scanner scanner;
+
     public ConsoleUI(MovieDatabase database)
     {
         this.database = database;
@@ -59,5 +67,14 @@ public class ConsoleUI
         scanner.nextLine();
 
         database.addMovie(new Movie(title, score));
+    }
+
+    private void printMovies(List<Movie> movies)
+    {
+        for (Movie movie : movies)
+        {
+            System.out.println("Title: " + movie.getTitle() +
+                    "Review score: " + movie.getReviewScore() + "/5");
+        }
     }
 }
