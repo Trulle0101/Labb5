@@ -40,7 +40,7 @@ public class MovieDatabase
         return result;
     }
 
-    public List<Movie> getAllMoives()
+    public List<Movie> getAllMovies()
     {
         return movies;
     }
