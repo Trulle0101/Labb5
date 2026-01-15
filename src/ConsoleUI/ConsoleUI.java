@@ -37,6 +37,7 @@ public class ConsoleUI
                     MovieFileHandler.saveMovies(database.getAllMovies());
                     running = false;
                 }
+                default -> System.out.println("Invalid choice.");
             }
         }
     }
@@ -47,14 +48,23 @@ public class ConsoleUI
         System.out.println("-------------------");
         System.out.println("1. Search title");
         System.out.println("2. Search review score");
+        System.out.println("3. Add movie");
         System.out.println("-------------------");
         System.out.println("4. Close program");
     }
 
     private void searchTitle()
     {
-        System.out.print("Enter key word: ");
+        System.out.print("Enter keyword: ");
         String keyword = scanner.nextLine();
+        printMovies(database.searchByTitle(keyword));
+    }
+
+    private void searchScore()
+    {
+        System.out.print("Enter minimum review score (1-5): ");
+        int score = scanner.nextInt();
+        scanner.nextLine();
         printMovies(database.searchByScore(score));
     }
 
