@@ -73,7 +73,14 @@ public class ConsoleUI
     {
         System.out.print("Enter keyword: ");
         String keyword = scanner.nextLine();
-        printMovies(database.searchByTitle(keyword));
+        if (!keyword.isEmpty())
+        {
+            printMovies(database.searchByTitle(keyword));
+        }
+        else
+        {
+            System.out.print("Wrong. Invalid keyuword: ");
+        }
     }
 
     /**
