@@ -9,10 +9,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Ansvar för att läsa och skriva filmer till fil
+ */
 public class MovieFileHandler
 {
     private static final String FILE_NAME = "movies.txt";
 
+    /**
+     * Sparar alla filmer till en textfil
+     * @param movies filmer som ska sparas
+     */
     public static void saveMovies(Iterable<Movie> movies)
     {
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILE_NAME)))
@@ -27,6 +34,10 @@ public class MovieFileHandler
         }
     }
 
+    /**
+     * Läser in filmer från fil och lägger dem i databasen
+     * @param database filmdatabasen
+     */
     public static void loadMovies(MovieDatabase database)
     {
         File file = new File(FILE_NAME);
